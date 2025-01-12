@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/phrase.json": "file:///Users/andrewcichewicz/repos/gotodolist/k8s/sealedsecret.yaml"
+    }
+}

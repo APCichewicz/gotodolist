@@ -6,10 +6,8 @@ import (
 )
 
 type Router struct {
-	UserController *controllers.UserController
-	TodoController *controllers.TodoController
-	AuthController *controllers.AuthController
-	Fiber          *fiber.App
+	AppService *AppService
+	Fiber      *fiber.App
 }
 
 func NewRouter(userController *controllers.UserController, todoController *controllers.TodoController, authController *controllers.AuthController) *Router {

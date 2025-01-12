@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/apcichewicz/GOTODOLIST/models"
-	"github.com/apcichewicz/GOTODOLIST/repos"
+	"github.com/apcichewicz/gotodolist/models"
+	"github.com/apcichewicz/gotodolist/repos"
 	"github.com/golang-jwt/jwt/v5"
 )
 
@@ -31,18 +31,17 @@ type AppService struct {
 
 func NewAppService(authRepo repos.AuthRepository, userRepo repos.UserRepository, toDoRepo repos.ToDoRepository) *AppService {
 	return &AppService{
-		AuthRepo: *repos.AuthRepository,
 		UserRepo: *repos.UserRepository,
 		ToDoRepo: *repos.ToDoRepository,
 	}
 }
 
 func (s *AppService) Login(email string, password string) (models.User, *jwt.Token, error) {
-	return s.AuthRepo.Login(email, password)
+
 }
 
 func (s *AppService) Register(user models.User) (models.User, *jwt.Token, error) {
-	return s.AuthRepo.Register(user)
+
 }
 
 func (s *AppService) GetUserByID(id string) (models.User, error) {
