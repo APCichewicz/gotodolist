@@ -12,10 +12,14 @@ type BunDb struct {
 	db *bun.DB
 }
 
-func new(dsn string) Db {
+func new(dsn string) BunDb {
 	pgdb := sql.OpenDB(pgdriver.NewConnector(pgdriver.WithDSN(dsn)))
 	db := bun.NewDB(pgdb, pgdialect.New())
-	return Db{
+	return BunDb{
 		db: db,
 	}
+}
+
+func (bdb *BunDb) get() *bun.DB {
+	return bdb.db
 }
